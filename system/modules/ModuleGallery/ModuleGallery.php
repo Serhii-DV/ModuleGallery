@@ -2,7 +2,7 @@
 
 /**
  * Contao Open Source CMS
- * Copyright (C) 2005-2011 Leo Feyer
+ * Copyright (C) 2005-2012 Leo Feyer
  *
  * Formerly known as TYPOlight Open Source CMS.
  *
@@ -21,8 +21,8 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Sergey Dyagovchenko, 2011 
- * @author     Sergey Dyagovchenko, http://d.sumy.ua/ 
+ * @copyright  Sergey Dyagovchenko 2011-2012
+ * @author     Sergey Dyagovchenko <http://d.sumy.ua>
  * @package    ModuleGallery 
  * @license    LGPL 
  * @filesource
@@ -32,8 +32,8 @@
 /**
  * Class ModuleGallery 
  *
- * @copyright  Sergey Dyagovchenko, 2011 
- * @author     Sergey Dyagovchenko, http://d.sumy.ua/ 
+ * @copyright  Sergey Dyagovchenko 2011-2012
+ * @author     Sergey Dyagovchenko <http://d.sumy.ua/>
  * @package    Controller
  */
 class ModuleGallery extends Module
@@ -182,6 +182,13 @@ class ModuleGallery extends Module
 		}
 
 		$images = array_values($images);
+
+		// Limit the total number of items (see #2652)
+		if ($this->numberOfItems > 0)
+		{
+			$images = array_slice($images, 0, $this->numberOfItems);
+		}
+
 		$total = count($images);
 		$limit = $total;
 		$offset = 0;
@@ -189,7 +196,22 @@ class ModuleGallery extends Module
 		// Pagination
 		if ($this->perPage > 0)
 		{
+			// Get the current page
 			$page = $this->Input->get('page') ? $this->Input->get('page') : 1;
+
+			// Do not index or cache the page if the page number is outside the range
+			if ($page < 1 || $page > ceil($total/$this->perPage))
+			{
+				global $objPage;
+				$objPage->noSearch = 1;
+				$objPage->cache = 0;
+
+				// Send a 404 header
+				header('HTTP/1.1 404 Not Found');
+				return;
+			}
+
+			// Set limit and offset
 			$offset = ($page - 1) * $this->perPage;
 			$limit = min($this->perPage + $offset, $total);
 
