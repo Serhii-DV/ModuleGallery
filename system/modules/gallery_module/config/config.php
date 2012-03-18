@@ -23,7 +23,7 @@
  * PHP version 5
  * @copyright  Sergey Dyagovchenko 2011-2012
  * @author     Sergey Dyagovchenko <http://d.sumy.ua/>
- * @package    ModuleGallery 
+ * @package    GalleryModule 
  * @license    LGPL 
  * @filesource
  */
