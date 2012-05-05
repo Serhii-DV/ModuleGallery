@@ -47,9 +47,10 @@ class ModuleGallery extends Module
 
 
 	/**
-	 * Generate module
+	 * Return if there are no files
+	 * @return string
 	 */
-	protected function compile()
+	public function generate()
 	{
 		$this->multiSRC = deserialize($this->multiSRC);
 
@@ -64,10 +65,20 @@ class ModuleGallery extends Module
 			}
 		}
 
-		if (!is_array($this->multiSRC) || count($this->multiSRC) < 1)
+		if (!is_array($this->multiSRC) || empty($this->multiSRC))
 		{
 			return '';
 		}
+
+		return parent::generate();
+	}
+
+
+	/**
+	 * Generate module
+	 */
+	protected function compile()
+	{
 		$images = array();
 		$auxDate = array();
 
@@ -270,8 +281,8 @@ class ModuleGallery extends Module
 				}
 
 				// Add size and margin
-				$images[($i+$j)]['size'] = $this->imgSize;
-				$images[($i+$j)]['imagemargin'] = '';
+				$images[($i+$j)]['size'] = $this->size;
+				$images[($i+$j)]['imagemargin'] = $this->imagemargin;
 				$images[($i+$j)]['fullsize'] = $this->fullsize;
 
 				$this->addImageToTemplate($objCell, $images[($i+$j)], $intMaxWidth, $strLightboxId);
