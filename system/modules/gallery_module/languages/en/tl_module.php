@@ -32,16 +32,16 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_module']['useHomeDir']	= array('Использовать домашнюю директорию', 'Если пользователь сайта вошел в систему, использовать его домашнюю директорию как источник файлов.');
-$GLOBALS['TL_LANG']['tl_module']['perRow']		= array('Миниатюр в ряду', 'Введите число миниатюр, выводимых в одном ряду.');
-$GLOBALS['TL_LANG']['tl_module']['perPage']		= array('Статей на странице', 'Пожалуйста, введите количество статей на странице (0 = отключение нумерации страниц).');
-$GLOBALS['TL_LANG']['tl_module']['sortBy']		= array('Сортировать по', 'Пожалуйста, выберите порядок сортировки.');
-$GLOBALS['TL_LANG']['tl_module']['galleryTpl']	= array('Галерея шаблонов', 'Здесь вы можете выбрать в галерею шаблонов.');
+$GLOBALS['TL_LANG']['tl_module']['useHomeDir']	= array('Use home directory', 'Use the home directory as file source if there is an authenticated user.');
+$GLOBALS['TL_LANG']['tl_module']['perRow']		= array('Thumbnails per row', 'The number of image thumbnails per row.');
+$GLOBALS['TL_LANG']['tl_module']['perPage']		= array('Items per page', 'The number of items per page. Set to 0 to disable pagination.');
+$GLOBALS['TL_LANG']['tl_module']['sortBy']		= array('Order by', 'Please choose the sort order.');
+$GLOBALS['TL_LANG']['tl_module']['galleryTpl']	= array('Gallery template', 'Here you can select the gallery template.');
 
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_module']['image_legend']	= 'Настройки изображения';
-$GLOBALS['TL_LANG']['tl_module']['template_legend']	= 'Настройки шаблонов';
+$GLOBALS['TL_LANG']['tl_module']['image_legend']	= 'Image settings';
+$GLOBALS['TL_LANG']['tl_module']['template_legend']	= 'Template settings';
 
 ?>

@@ -10,12 +10,12 @@
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
  * version 3 of the License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
  * Software Foundation website at <http://www.gnu.org/licenses/>.
@@ -23,8 +23,8 @@
  * PHP version 5
  * @copyright  Sergey Dyagovchenko 2011-2012
  * @author     Sergey Dyagovchenko <http://d.sumy.ua/>
- * @package    GalleryModule 
- * @license    LGPL 
+ * @package    GalleryModule
+ * @license    LGPL
  * @filesource
  */
 
@@ -32,6 +32,6 @@
 /**
  * Back end modules
  */
-$GLOBALS['TL_LANG']['FMD']['gallery'] = array('Ð“Ð°Ð»Ð»ÐµÑ€ÐµÑ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ð¹', 'ÐŸÐ¾Ð·Ð²Ð¾Ð»ÑÐµÑ‚ Ð²Ñ‹Ð²Ð¾Ð´Ð¸Ñ‚ÑŒ Ð³Ð°Ð»Ð»ÐµÑ€ÐµÑŽ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ð¹');
+$GLOBALS['TL_LANG']['FMD']['gallery'] = array('Ãàëëåðåÿ èçîáðàæåíèé', 'Ïîçâîëÿåò âûâîäèòü ãàëëåðåþ èçîáðàæåíèé');
 
 ?>
